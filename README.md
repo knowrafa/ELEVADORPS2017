@@ -1,5 +1,5 @@
 
-#Atividade Projeto de Softaware
+#Atividade Projeto de Software
 
 Este projeto representa a abstração de um sistema automatizado de elevadores. 
 Para ajudar no entendimento do projeto, recomenda-se uma breve leitura dos diagramas disponíveis no repositório.
