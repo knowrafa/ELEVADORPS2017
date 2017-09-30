@@ -18,13 +18,13 @@ public class Edificio {
     private String nome;
     private String endereco;
     private ArrayList pisos;
-    private Vector<Vector> credenciaisValidas;
+    private Credencial credenciais;
     
-    public Edificio(String nome, String endereco, int quantidadePisos, Vector<Vector> credenciaisValidas){
+    public Edificio(String nome, String endereco, int quantidadePisos, Credencial credenciais){
         int i;
         setNome(nome);
         setEndereco(endereco);
-        this.credenciaisValidas = credenciaisValidas;
+        this.credenciais = credenciais;
         
         for(i=0; i <= quantidadePisos; i++){
             pisos.add(new Piso(i));

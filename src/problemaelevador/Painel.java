@@ -18,6 +18,10 @@ public class Painel {
     private Credencial credenciais;
     
     
+    public Painel(Credencial credenciais){
+        
+    }
+    
     public int chamaElevador(int pisoAtual, int pisoDestino){
         String credencial;
         if(credenciais.needCredential(pisoDestino)){
