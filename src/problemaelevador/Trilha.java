@@ -17,7 +17,10 @@ public class Trilha {
     private int numeroTrilha;
     private int quantidadeDePisos;
     private Queue myQueue = new LinkedList();
-    
+   
+   public Trilha(int numeroTrilha){
+       this.numeroTrilha = numeroTrilha;
+   }
    public Trilha(int numeroTrilha, int quantidadePisos, Elevador elevador){
         this.numeroTrilha = numeroTrilha;
         this.elevador = elevador;

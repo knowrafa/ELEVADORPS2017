@@ -22,12 +22,12 @@ public class Painel {
           
     }
     
-    public int chamaElevador(int pisoAtual, int pisoDestino){
+    public Trilha chamaElevador(int pisoAtual, int pisoDestino){
         String credencial;
         if(credenciais.needCredential(pisoDestino)){
             credencial = credenciais.readCredential();
             if(!credenciais.isValid(pisoDestino, credencial))
-                return -1;
+                return null;
         }
         
         return findNearElevator(pisoAtual);
@@ -41,7 +41,7 @@ public class Painel {
     public Trilha findNearElevator(int pisoAtual){
         int near = -1;
         Trilha lastTrilha;
-        Trilha nearTrilha;
+        Trilha nearTrilha = null;
         Iterator itr = trilhas.iterator();
         while(itr.hasNext()) {
             lastTrilha = (Trilha)itr.next();
