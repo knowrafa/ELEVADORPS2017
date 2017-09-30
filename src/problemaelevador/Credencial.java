@@ -1,8 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *
+ * @author Arnold Lima, Rafael Alessandro, Rafael Falcão
  */
+
 package problemaelevador;
 
 import java.util.ArrayList;
@@ -10,10 +10,6 @@ import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Vector;
 
-/**
- *
- * @author aluno
- */
 public class Credencial {
     private ArrayList<ArrayList<String>> credenciaisValidas;
     private int numeroDePisos;
@@ -29,11 +25,9 @@ public class Credencial {
         //credenciaisValidas.get(numeroDePisos).get(i);
     }
 
-
     public boolean needCredential(int piso){
         if(credenciaisValidas.get(piso).isEmpty()) return false;
-        return true;
-        
+        return true;        
     }
     
     public String readCredential(){

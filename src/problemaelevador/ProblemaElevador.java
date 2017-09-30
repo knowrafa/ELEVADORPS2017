@@ -1,17 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *
+ * @author Arnold Lima, Rafael Alessandro, Rafael Falcão
  */
+
 package problemaelevador;
 
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author aluno
- */
 public class ProblemaElevador {
 
     public static void main(String[] args) {
