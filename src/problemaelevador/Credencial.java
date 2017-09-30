@@ -28,7 +28,7 @@ public class Credencial {
         //IMPORTANTE !v!
         //credenciaisValidas.get(numeroDePisos).get(i);
     }
-        public boolean verificaCredenciais(int pisoDestino){
+    public boolean verificaCredenciais(int pisoDestino){
      return false;   
     }
 
