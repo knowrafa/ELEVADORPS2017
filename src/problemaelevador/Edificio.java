@@ -32,7 +32,7 @@ public class Edificio {
         }
         
         for(i=0; i <= quantidadePisos; i++){
-            pisos.add(new Piso(i, new Painel(i, credenciais)));
+            pisos.add(new Piso(i, new Painel(i, credenciais, trilhas)));
         }
     }
     

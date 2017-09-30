@@ -15,11 +15,11 @@ import java.util.Vector;
  */
 public class Painel {
     private ArrayList botoes;
-    private Vector<Trilha> trilhas;
+    private ArrayList<Trilha> trilhas;
     private Credencial credenciais;
     private int numeroPiso;
     
-    public Painel(int numeroPiso, Credencial credenciais){
+    public Painel(int numeroPiso, Credencial credenciais, ArrayList<Trilha> trilhas){
         this.numeroPiso = numeroPiso;
         this.credenciais = credenciais;
           
@@ -41,10 +41,11 @@ public class Painel {
         return false;
     }
         
-    public int findNearElevator(int pisoAtual, ArrayList<Trilha> trilhas){
+    public int findNearElevator(int pisoAtual){
         int near = -1;
         
         Iterator itr = trilhas.iterator();
         
+        return near;
     }
 }
