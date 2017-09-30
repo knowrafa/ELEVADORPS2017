@@ -5,6 +5,9 @@
 
 package problemaelevador;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Elevador {
     private float capacidade;
     private boolean botaoTerreo;
@@ -81,6 +84,23 @@ public class Elevador {
     
     public void setMusicaElevador(String musica){
         System.out.println("Estamos tocando no momento " + musica);
+    }
+    
+    public void moveElevador(int andarDestino) throws InterruptedException {
+        this.ocupado = true;
+        new Thread() {
+            @Override
+            public void run() {
+                int tempo = (int)Math.abs(andarDestino - andarAtual);
+                try {
+                    sleep(tempo * 2000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Elevador.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }.start();
+        
+        this.ocupado = false;
     }
 
 }
