@@ -86,7 +86,7 @@ public class Elevador {
         System.out.println("Estamos tocando no momento " + musica);
     }
     
-    public void moveElevador(int andarDestino) throws InterruptedException {
+    public void moveElevador(int andarDestino, int trilha) throws InterruptedException {
         this.ocupado = true;
         new Thread() {
             @Override
@@ -94,13 +94,16 @@ public class Elevador {
                 int tempo = (int)Math.abs(andarDestino - andarAtual);
                 try {
                     sleep(tempo * 2000);
+                    System.out.print("Elevador " + trilha + " chegou ao andar " + andarDestino);
+                    System.out.println("Esperando...");
+                    sleep(3000);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Elevador.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                ocupado = false;
             }
         }.start();
         
-        this.ocupado = false;
     }
 
 }
