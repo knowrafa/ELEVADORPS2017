@@ -31,7 +31,7 @@ public class Trilha {
        elevador.setMusicaElevador(music);
    }
    
-   public void adcionaRota(int numeroPiso) {
+   public void adicionaRota(int numeroPiso) {
        try {
            myQueue.add(numeroPiso);
        } catch (IllegalStateException e) {

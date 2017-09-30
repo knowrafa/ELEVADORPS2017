@@ -54,7 +54,7 @@ public class Painel {
                 }
             }
         }
-        nearTrilha.adcionaRota(pisoAtual);
+        nearTrilha.adicionaRota(pisoAtual);
         return nearTrilha;
     }
 }
