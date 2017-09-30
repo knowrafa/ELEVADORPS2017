@@ -9,3 +9,5 @@ nbproject/private/private.xml
 README.md
 README.md
 *.md
+/build/
+/dist/
