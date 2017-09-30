@@ -45,6 +45,9 @@ public class Painel {
         int near = -1;
         
         Iterator itr = trilhas.iterator();
+        while(itr.hasNext()) {
+            itr.next
+        }
         
         return near;
     }
