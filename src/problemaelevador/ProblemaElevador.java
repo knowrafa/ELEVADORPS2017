@@ -15,7 +15,6 @@ public class ProblemaElevador {
         int numeroDePisos = 10;
         Credencial credenciais = new Credencial(numeroDePisos);
         
-        //credenciais.novaCredencial(int andar, String credencial);
         credenciais.novaCredencial(1, "abc");
         credenciais.novaCredencial(1, "bca");
         credenciais.novaCredencial(1, "cab");
