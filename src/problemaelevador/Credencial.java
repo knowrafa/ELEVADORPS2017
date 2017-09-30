@@ -58,4 +58,13 @@ public class Credencial {
         return false;
     }
     
+    public boolean novaCredencial(int piso, String credencial) {
+        try {
+            credenciaisValidas.get(piso).add(credencial);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }
