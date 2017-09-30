@@ -6,6 +6,7 @@
 package problemaelevador;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Vector;
 
 /**
@@ -21,6 +22,9 @@ public class Painel {
     public Painel(int numeroPiso, Credencial credenciais){
         this.numeroPiso = numeroPiso;
         this.credenciais = credenciais;
+        
+    public Painel(Credencial credenciais){
+        
     }
     
     public int chamaElevador(int pisoAtual, int pisoDestino){
@@ -39,8 +43,7 @@ public class Painel {
         return false;
     }
         
-    public int findNearElevator(int pisoAtual){
-        
-        return 1;
+    public int findNearElevator(int pisoAtual, ArrayList<Trilha> trilhas){
+        return -1;
     }
 }

@@ -52,7 +52,7 @@ public class Credencial {
         
         Iterator it = credenciaisValidas.get(piso).iterator();
         while(it.hasNext()){
-            if(it.next()== credencial) return true;
+            if((String) it.next() == credencial) return true;
         }
         if(credenciaisValidas.get(piso).isEmpty()) return true;
         return false;

@@ -5,6 +5,7 @@
  */
 package problemaelevador;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
 import java.util.Queue;
@@ -42,5 +43,15 @@ public class Trilha {
            e.printStackTrace();
        }
        return -1;
-   }   
+   }
+   
+   public int ultimoAndarDaFila() {
+       Iterator itr = myQueue.iterator();
+       int ultimoAndar = (int)itr.next();
+       while(itr.hasNext()) {
+           ultimoAndar = (int)itr.next();
+       }
+       
+       return ultimoAndar;
+   }
 }
