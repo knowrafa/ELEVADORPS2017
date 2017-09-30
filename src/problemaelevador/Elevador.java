@@ -21,7 +21,7 @@ public class Elevador {
     
     public Elevador(float capacidade){
         this.capacidade=capacidade;
-        setTrilha(trilha);
+        //setTrilha(trilha);
     }
     
     public float getCapacidade() {

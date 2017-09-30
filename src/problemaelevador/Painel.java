@@ -14,7 +14,7 @@ import java.util.Vector;
  */
 public class Painel {
     private ArrayList botoes;
-    private Vector trilhas;
+    private Vector<Trilha> trilhas;
     private Credencial credenciais;
     
     
