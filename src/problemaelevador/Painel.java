@@ -33,10 +33,6 @@ public class Painel {
         return findNearElevator(pisoAtual);
         
     }
-    
-    public boolean lerCredenciais(int piso){
-        return false;
-    }
         
     public Trilha findNearElevator(int pisoAtual){
         int near = -1;
