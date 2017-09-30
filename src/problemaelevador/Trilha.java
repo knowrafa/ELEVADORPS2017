@@ -47,7 +47,7 @@ public class Trilha {
    
    public int ultimoAndarDaFila() {
        Iterator itr = myQueue.iterator();
-       int ultimoAndar = (int)itr.next();
+       int ultimoAndar = -1;
        while(itr.hasNext()) {
            ultimoAndar = (int)itr.next();
        }
