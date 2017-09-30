@@ -11,11 +11,29 @@ package problemaelevador;
  */
 public class ProblemaElevador {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+       
+        int numeroDePisos = 10;
+        
+        
+        Credencial credenciais = new Credencial(numeroDePisos);
+        
+        //credenciais.novaCredencial(int andar, String credencial);
+        credenciais.novaCredencial(1, "abc");
+        credenciais.novaCredencial(1, "bca");
+        credenciais.novaCredencial(1, "cab");
+        credenciais.novaCredencial(2, "aaa");
+        credenciais.novaCredencial(2, "bbb");
+        credenciais.novaCredencial(3, "ccc");
+        credenciais.novaCredencial(3, "ddd");
+        credenciais.novaCredencial(3, "ccd");
+        credenciais.novaCredencial(4, "ddc");
+        credenciais.novaCredencial(4, "eee");
+        credenciais.novaCredencial(4, "eee");
+        credenciais.novaCredencial(5, "fff");
+        credenciais.novaCredencial(5, "ffe");
+        credenciais.novaCredencial(6, "fee");
+               
     }
     
 }
