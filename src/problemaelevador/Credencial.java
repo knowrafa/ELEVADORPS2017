@@ -16,6 +16,7 @@ import java.util.Vector;
 public class Credencial {
     private ArrayList<ArrayList> credenciaisValidas;
     private int numeroDePisos;
+    
     public Credencial(int numeroDePisos){
         this.numeroDePisos = numeroDePisos;
         credenciaisValidas = new ArrayList();
@@ -33,6 +34,9 @@ public class Credencial {
     
     
     public boolean isValid(int piso, String credencial){
+        if(piso > this.numeroDePisos || piso < 0)
+            System.out.println("Piso Inválido");
+        
         Iterator it = credenciaisValidas.get(piso).iterator();
         while(it.hasNext()){
             if(it.next()== credencial) return true;

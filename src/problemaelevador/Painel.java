@@ -15,23 +15,23 @@ import java.util.Vector;
 public class Painel {
     private ArrayList botoes;
     private Vector trilhas;
+    private Credencial credenciais;
     
+    public int chamaElevador(int pisoAtual, int pisoDestino){
+        return findNearElevator(pisoAtual);
+    }
     
-    public void chamaElevador(int pisoDestino){
+    public int chamaElevador(int pisoAtual, int pisoDestino, String credencial){
+        
+        if(credenciais.isValid(pisoAtual, credencial)) return -1;
+        else return findNearElevator(pisoAtual);
         
     }
     
     public boolean lerCredenciais(int piso){
         return false;
     }
-    
-    public int callElevator(int piso, boolean needCredential){
-        if(needCredential){
-            
-        }
-        return 1;
-    }
-    
+        
     public int findNearElevator(int pisoAtual){
         
         return 1;

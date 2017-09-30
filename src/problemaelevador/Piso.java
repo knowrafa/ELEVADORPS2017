@@ -15,7 +15,7 @@ public class Piso {
     private boolean ledSobe;
     private boolean ledDesce;
     private int numeroPiso;
-    private boolean credencial;
+    private boolean needCredencial;
     private Painel painel;
   
     
@@ -47,11 +47,11 @@ public class Piso {
     }
 
     public boolean isCredencial() {
-        return credencial;
+        return needCredencial;
     }
 
     public void setCredencial(boolean credencial) {
-        this.credencial = credencial;
+        this.needCredencial = credencial;
     }
 
     public Painel getPainel() {
