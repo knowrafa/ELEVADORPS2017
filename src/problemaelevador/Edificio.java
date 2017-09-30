@@ -17,9 +17,9 @@ import java.util.Vector;
 public class Edificio {
     private String nome;
     private String endereco;
-    private ArrayList<Piso> pisos;
+    private ArrayList<Piso> pisos = new ArrayList<Piso>();;
     private Credencial credenciais;
-    private ArrayList<Trilha> trilhas;
+    private ArrayList<Trilha> trilhas = new ArrayList<Trilha>();
     
     public Edificio(String nome, String endereco, int quantidadePisos, int quantidadeTrilhas ,Credencial credenciais, float pesoMax){
         int i=0;
@@ -28,10 +28,8 @@ public class Edificio {
         this.credenciais = credenciais;
         
         for(i=0; i < quantidadeTrilhas; i++){
-            Elevador elevador = new Elevador(pesoMax);
-            Trilha trilha = new Trilha(i+1, quantidadePisos,  elevador);
             System.out.println("AQUIMEMO");
-            trilhas.add(trilha);
+            trilhas.add(new Trilha(i+1, quantidadePisos,  new Elevador(pesoMax)));
             System.out.println("TRILHAS "+ i);
         }
         System.out.println("TRILHASPROBLEM");
@@ -42,7 +40,7 @@ public class Edificio {
     }
     
     public void setMusicInElevator(int numTrilha, String music){
-        trilhas.get(numTrilha).setElevatorMusic(music);
+        trilhas.get(numTrilha-1).setElevatorMusic(music);
     }
     
   //  public 

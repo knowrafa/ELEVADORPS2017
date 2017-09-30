@@ -46,7 +46,7 @@ public class ProblemaElevador {
         
         Scanner read = new Scanner(System.in);
         
-        JOptionPane.showInputDialog(read, "Qual o Piso?");
+        int numPiso = Integer.parseInt(JOptionPane.showInputDialog("Qual o Piso?"));
         
     }
     

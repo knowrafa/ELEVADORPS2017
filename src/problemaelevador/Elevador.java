@@ -85,7 +85,7 @@ public class Elevador {
     }
     
     public void setMusicaElevador(String musica){
-        System.out.println("Estamos tocando no momento" + musica);
+        System.out.println("Estamos tocando no momento " + musica);
     }
 
 }
