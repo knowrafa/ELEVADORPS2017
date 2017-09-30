@@ -6,6 +6,7 @@
 package problemaelevador;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Vector;
 
 /**
@@ -14,8 +15,9 @@ import java.util.Vector;
  */
 public class Credencial {
     private ArrayList<ArrayList> credenciaisValidas;
-    
+    private int numeroDePisos;
     public Credencial(int numeroDePisos){
+        this.numeroDePisos = numeroDePisos;
         credenciaisValidas = new ArrayList();
         for(int i=0; i <=  numeroDePisos; i++){
             credenciaisValidas.add(new ArrayList());
@@ -31,7 +33,10 @@ public class Credencial {
     
     
     public boolean isValid(int piso, String credencial){
-        //credenciaisValidas.get(piso);
+        Iterator it = credenciaisValidas.get(piso).iterator();
+        while(it.hasNext()){
+            if(it.next()== credencial) return true;
+        }
         return false;
     }
     
