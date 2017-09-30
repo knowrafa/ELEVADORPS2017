@@ -43,14 +43,15 @@ public class Painel {
     }
         
     public int findNearElevator(int pisoAtual){
-        int near = -1, last = -1;
-        
+        int near = -1;
+        Trilha lastTrilha;
         Iterator itr = trilhas.iterator();
         while(itr.hasNext()) {
-            last = ((Trilha)itr.next()).ultimoAndarDaFila();
-            if(near == -1) { near = last; }
+            lastTrilha = (Trilha)itr.next();
+            int lastValue = lastTrilha.ultimoAndarDaFila();
+            if(near == -1) { near = lastValue; }
             else {
-                if((int)abs(near-pisoAtual) > (int)abs(last-pisoAtual)) { near = last; }
+                if((int)abs(near-pisoAtual) > (int)abs(lastValue-pisoAtual)) { near = lastValue; }
             }
         }
         
