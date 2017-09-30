@@ -42,6 +42,9 @@ public class Painel {
     }
         
     public int findNearElevator(int pisoAtual, ArrayList<Trilha> trilhas){
-        return -1;
+        int near = -1;
+        
+        Iterator itr = trilhas.iterator();
+        
     }
 }
