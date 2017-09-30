@@ -19,13 +19,16 @@ public class Edificio {
     private String endereco;
     private ArrayList pisos;
     private Credencial credenciais;
+    private ArrayList<Trilha> trilhas;
     
-    public Edificio(String nome, String endereco, int quantidadePisos, Credencial credenciais){
+    public Edificio(String nome, String endereco, int quantidadePisos, int quantidadeTrilhas ,Credencial credenciais, float pesoMax){
         int i;
         setNome(nome);
         setEndereco(endereco);
         this.credenciais = credenciais;
-        
+        for(i=0; i < quantidadeTrilhas; i++){
+            trilhas.add(new Trilha(i+1, quantidadePisos,  new Elevador(pesoMax, i+1)));
+        }
         for(i=0; i <= quantidadePisos; i++){
             pisos.add(new Piso(i));
         }
