@@ -28,13 +28,7 @@ public class Credencial {
         //IMPORTANTE !v!
         //credenciaisValidas.get(numeroDePisos).get(i);
     }
-    public boolean verificaCredenciais(int pisoDestino){
-        
-        Iterator it = Arraylist<string> credenciaisValidas.iterator();
-        for(int i = 0; i<numeroDePisos; i++) {
-            
-        }
-    }
+
 
     public boolean needCredential(int piso){
         if(credenciaisValidas.get(piso).isEmpty()) return false;
