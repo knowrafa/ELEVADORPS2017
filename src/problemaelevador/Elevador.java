@@ -19,7 +19,7 @@ public class Elevador {
     private Trilha trilha;
     private float peso;
     
-    public Elevador(float capacidade, Trilha trilha){
+    public Elevador(float capacidade){
         this.capacidade=capacidade;
         setTrilha(trilha);
     }
@@ -54,10 +54,8 @@ public class Elevador {
 
     public void setOcupado(boolean ocupado) {
         this.ocupado = ocupado;
-    } public Elevador(float capacidade){
-        this.capacidade=capacidade;
     }
-
+    
     public boolean isSubindo() {
         return subindo;
     }

@@ -26,9 +26,11 @@ public class Edificio {
         setNome(nome);
         setEndereco(endereco);
         this.credenciais = credenciais;
+        
         for(i=0; i < quantidadeTrilhas; i++){
-            trilhas.add(new Trilha(i+1, quantidadePisos,  new Elevador(pesoMax, i+1)));
+            trilhas.add(new Trilha(i+1, quantidadePisos,  new Elevador(pesoMax)));
         }
+        
         for(i=0; i <= quantidadePisos; i++){
             pisos.add(new Piso(i));
         }
