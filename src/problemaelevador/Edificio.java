@@ -22,14 +22,16 @@ public class Edificio {
     private ArrayList<Trilha> trilhas;
     
     public Edificio(String nome, String endereco, int quantidadePisos, int quantidadeTrilhas ,Credencial credenciais, float pesoMax){
-        int i;
+        int i=0;
         setNome(nome);
         setEndereco(endereco);
         this.credenciais = credenciais;
         
         for(i=0; i < quantidadeTrilhas; i++){
+            Elevador elevador = new Elevador(pesoMax);
+            Trilha trilha = new Trilha(i+1, quantidadePisos,  elevador);
             System.out.println("AQUIMEMO");
-            trilhas.add(new Trilha(i+1, quantidadePisos,  new Elevador(pesoMax)));
+            trilhas.add(trilha);
             System.out.println("TRILHAS "+ i);
         }
         System.out.println("TRILHASPROBLEM");
