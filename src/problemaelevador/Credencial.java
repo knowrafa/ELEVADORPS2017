@@ -18,7 +18,7 @@ public class Credencial {
         this.numeroDePisos = numeroDePisos;
         credenciaisValidas = new ArrayList();
         for(int i=0; i <=  numeroDePisos; i++){
-            credenciaisValidas.add(new ArrayList());
+            credenciaisValidas.add(new ArrayList<String>());
         
         }
         //IMPORTANTE !v!

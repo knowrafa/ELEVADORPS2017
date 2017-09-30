@@ -12,7 +12,7 @@ import java.util.Vector;
 
 public class Painel {
     private ArrayList botoes;
-    private ArrayList<Trilha> trilhas;
+    private ArrayList<Trilha> trilhas = new ArrayList<Trilha>();
     private Credencial credenciais;
     private int numeroPiso;
     
@@ -38,19 +38,23 @@ public class Painel {
         return false;
     }
         
-    public int findNearElevator(int pisoAtual){
+    public Trilha findNearElevator(int pisoAtual){
         int near = -1;
         Trilha lastTrilha;
+        Trilha nearTrilha;
         Iterator itr = trilhas.iterator();
         while(itr.hasNext()) {
             lastTrilha = (Trilha)itr.next();
             int lastValue = lastTrilha.ultimoAndarDaFila();
             if(near == -1) { near = lastValue; }
             else {
-                if((int)abs(near-pisoAtual) > (int)abs(lastValue-pisoAtual)) { near = lastValue; }
+                if((int)abs(near-pisoAtual) > (int)abs(lastValue-pisoAtual)) { 
+                    near = lastValue;
+                    nearTrilha = lastTrilha;
+                }
             }
         }
         
-        return near;
+        return nearTrilha;
     }
 }
