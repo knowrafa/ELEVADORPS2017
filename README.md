@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Atividade Projeto de Softaware
 
 Este projeto representa a abstração de um sistema automatizado de elevadores. 
@@ -7,3 +8,9 @@ Como executar:
 
 O master do repositório pode ser aberto como um projeto utilizando-se a IDE NetBeans (8.1 ou superior)
 
+=======
+# ELEVADORPS2017
+Elevador PS Atividade
+
+https://i.imgur.com/oyJYdJ2.jpg
+>>>>>>> d05c60a9345afb62894567bf98f67215cc87d437

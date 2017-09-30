@@ -5,6 +5,7 @@
  */
 package problemaelevador;
 
+import static java.lang.Math.abs;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Vector;
@@ -42,11 +43,15 @@ public class Painel {
     }
         
     public int findNearElevator(int pisoAtual){
-        int near = -1;
+        int near = -1, last = -1;
         
         Iterator itr = trilhas.iterator();
         while(itr.hasNext()) {
-            int last = ((Trilha)itr.next()).ultimoAndarDaFila();
+            last = ((Trilha)itr.next()).ultimoAndarDaFila();
+            if(near == -1) { near = last; }
+            else {
+                if((int)abs(near-pisoAtual) > (int)abs(last-pisoAtual)) { near = last; }
+            }
         }
         
         return near;
