@@ -19,8 +19,9 @@ public class Piso {
     private Painel painel;
   
     
-    public Piso(int numeroPiso){
+    public Piso(int numeroPiso, Painel novoPainel){
         this.numeroPiso = numeroPiso;
+        painel = novoPainel;
     }
     public boolean isLedSobe() {
         return ledSobe;
@@ -62,6 +63,8 @@ public class Piso {
         this.painel = painel;
     }
    
-    
+    public void defineCredentials(){
+        
+    }
     
 }

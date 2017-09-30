@@ -17,7 +17,7 @@ import java.util.Vector;
 public class Edificio {
     private String nome;
     private String endereco;
-    private ArrayList pisos;
+    private ArrayList<Piso> pisos;
     private Credencial credenciais;
     private ArrayList<Trilha> trilhas;
     
@@ -32,7 +32,7 @@ public class Edificio {
         }
         
         for(i=0; i <= quantidadePisos; i++){
-            pisos.add(new Piso(i));
+            pisos.add(new Piso(i, new Painel(i, credenciais)));
         }
     }
     

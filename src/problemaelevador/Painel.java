@@ -16,10 +16,11 @@ public class Painel {
     private ArrayList botoes;
     private Vector<Trilha> trilhas;
     private Credencial credenciais;
+    private int numeroPiso;
     
-    
-    public Painel(Credencial credenciais){
-        
+    public Painel(int numeroPiso, Credencial credenciais){
+        this.numeroPiso = numeroPiso;
+        this.credenciais = credenciais;
     }
     
     public int chamaElevador(int pisoAtual, int pisoDestino){
