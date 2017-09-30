@@ -26,15 +26,10 @@ public class Trilha {
         this.elevador = elevador;
         //rota = new int[quantidadePisos];        
    }
-   
-   public void adicionaRota(int numeroPiso){
-       
-       
-   }
-   
-   public void addQueue(int andar) {
+
+   public void adcionaRota(int numeroPiso) {
        try {
-           myQueue.add(andar);
+           myQueue.add(numeroPiso);
        } catch (IllegalStateException e) {
            e.printStackTrace();
        }
@@ -42,10 +37,10 @@ public class Trilha {
    
    public int proximoAndar() {      
        try {
-           return myQueue.remove();
+           return (int)myQueue.remove();
        } catch(NoSuchElementException e) {
            e.printStackTrace();
        }
-   }
-   
+       return -1;
+   }   
 }
