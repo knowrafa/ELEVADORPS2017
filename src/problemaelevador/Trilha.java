@@ -39,13 +39,12 @@ public class Trilha {
        }
    }
    
-   public int proximoAndar() {      
+   public void proximoAndar() throws InterruptedException {      
        try {
-           return (int)myQueue.remove();
+         elevador.moveElevador((int)myQueue.remove(), this.numeroTrilha);
        } catch(NoSuchElementException e) {
            e.printStackTrace();
        }
-       return -1;
    }
    
    public int ultimoAndarDaFila() {
