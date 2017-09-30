@@ -15,7 +15,7 @@ import java.util.Vector;
  * @author aluno
  */
 public class Credencial {
-    private ArrayList<ArrayList> credenciaisValidas;
+    private ArrayList<ArrayList<String>> credenciaisValidas;
     private int numeroDePisos;
     
     public Credencial(int numeroDePisos){
