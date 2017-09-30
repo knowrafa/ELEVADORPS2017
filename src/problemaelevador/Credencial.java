@@ -7,6 +7,7 @@ package problemaelevador;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Scanner;
 import java.util.Vector;
 
 /**
@@ -31,9 +32,21 @@ public class Credencial {
      return false;   
     }
 
+    public boolean needCredential(int piso){
+        if(credenciaisValidas.get(piso).isEmpty()) return false;
+        return true;
+        
+    }
+    
+    public String readCredential(){
+        Scanner read = new Scanner(System.in);
+        String credential = read.nextLine();
+        return credential;
+    }
     
     
     public boolean isValid(int piso, String credencial){
+        
         if(piso > this.numeroDePisos || piso < 0)
             System.out.println("Piso Inválido");
         
@@ -41,6 +54,7 @@ public class Credencial {
         while(it.hasNext()){
             if(it.next()== credencial) return true;
         }
+        if(credenciaisValidas.get(piso).isEmpty()) return true;
         return false;
     }
     

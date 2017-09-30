@@ -17,14 +17,16 @@ public class Painel {
     private Vector trilhas;
     private Credencial credenciais;
     
-    public int chamaElevador(int pisoAtual, int pisoDestino){
-        return findNearElevator(pisoAtual);
-    }
     
-    public int chamaElevador(int pisoAtual, int pisoDestino, String credencial){
+    public int chamaElevador(int pisoAtual, int pisoDestino){
+        String credencial;
+        if(credenciais.needCredential(pisoDestino)){
+            credencial = credenciais.readCredential();
+            if(!credenciais.isValid(pisoDestino, credencial))
+                return -1;
+        }
         
-        if(credenciais.isValid(pisoAtual, credencial)) return -1;
-        else return findNearElevator(pisoAtual);
+        return findNearElevator(pisoAtual);
         
     }
     
