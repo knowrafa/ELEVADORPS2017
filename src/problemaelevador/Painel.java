@@ -46,7 +46,7 @@ public class Painel {
         
         Iterator itr = trilhas.iterator();
         while(itr.hasNext()) {
-            int = ((Trilha)itr.next()).ultimoAndarDaFila();
+            int last = ((Trilha)itr.next()).ultimoAndarDaFila();
         }
         
         return near;
