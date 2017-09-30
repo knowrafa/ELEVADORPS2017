@@ -34,7 +34,13 @@ public class ProblemaElevador {
         //Instanciando o novo Edifício.
         Edificio edificio = new Edificio("INF Prédio 2", "Câmpus Samambaia", numeroDePisos, quantidadeTrilhas, credenciais, pesoMax );
         
-               
+        edificio.setMusicInElevator(1, "Horse with no name");
+        edificio.setMusicInElevator(2, "Alegro");
+        edificio.setMusicInElevator(3, "Inquietação");
+        edificio.setMusicInElevator(4, "Young Folks");
+        edificio.setMusicInElevator(5, "El Fuego");
+        
+        
     }
     
 }

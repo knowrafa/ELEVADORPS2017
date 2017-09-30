@@ -36,6 +36,13 @@ public class Edificio {
         }
     }
     
+    public void setMusicInElevator(int numTrilha, String music){
+        trilhas.get(numTrilha).setElevatorMusic(music);
+    }
+    
+  //  public 
+    
+    
     public String getNome() {
         return nome;
     }

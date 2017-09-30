@@ -20,14 +20,18 @@ public class Trilha {
     private Elevador elevador;
     private int numeroTrilha;
     private int quantidadeDePisos;
-    Queue myQueue = new LinkedList();
+    private Queue myQueue = new LinkedList();
     
    public Trilha(int numeroTrilha, int quantidadePisos, Elevador elevador){
         this.numeroTrilha = numeroTrilha;
         this.elevador = elevador;
         this.quantidadeDePisos = quantidadePisos;
    }
-
+   
+   public void setElevatorMusic(String music){
+       elevador.setMusicaElevador(music);
+   }
+   
    public void adcionaRota(int numeroPiso) {
        try {
            myQueue.add(numeroPiso);
