@@ -29,7 +29,11 @@ public class Credencial {
         //credenciaisValidas.get(numeroDePisos).get(i);
     }
     public boolean verificaCredenciais(int pisoDestino){
-     return false;   
+        
+        Iterator it = Arraylist<string> credenciaisValidas.iterator();
+        for(int i = 0; i<numeroDePisos; i++) {
+            
+        }
     }
 
     public boolean needCredential(int piso){
