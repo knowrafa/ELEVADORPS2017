@@ -18,12 +18,13 @@ import java.util.Vector;
 public class Trilha {
     private Elevador elevador;
     private int numeroTrilha;
+    private int quantidadeDePisos;
     Queue myQueue = new LinkedList();
     
    public Trilha(int numeroTrilha, int quantidadePisos, Elevador elevador){
         this.numeroTrilha = numeroTrilha;
         this.elevador = elevador;
-        //rota = new int[quantidadePisos];        
+        this.quantidadeDePisos = quantidadePisos;
    }
 
    public void adcionaRota(int numeroPiso) {

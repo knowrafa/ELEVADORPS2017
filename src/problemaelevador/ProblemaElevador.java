@@ -13,9 +13,10 @@ public class ProblemaElevador {
 
     public static void main(String[] args) {
         int numeroDePisos = 10;
+        int quantidadeTrilhas = 5;
+        float pesoMax = 800;
         Credencial credenciais = new Credencial(numeroDePisos);
         
-        //credenciais.novaCredencial(int andar, String credencial);
         credenciais.novaCredencial(1, "abc");
         credenciais.novaCredencial(1, "bca");
         credenciais.novaCredencial(1, "cab");
@@ -31,7 +32,7 @@ public class ProblemaElevador {
         credenciais.novaCredencial(5, "ffe");
         credenciais.novaCredencial(6, "fee");
         //Instanciando o novo Edifício.
-        Edificio edificio = new Edificio("INF Prédio 2", "Câmpus Samambaia", numeroDePisos, credenciais );
+        Edificio edificio = new Edificio("INF Prédio 2", "Câmpus Samambaia", numeroDePisos, quantidadeTrilhas, credenciais, pesoMax );
         
                
     }

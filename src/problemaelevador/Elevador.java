@@ -78,13 +78,16 @@ public class Elevador {
         return peso;
     }
 
-    public void setPeso(float peso) {
-        this.peso = peso;
+    public boolean setPeso(float peso) {
+        if(this.peso + peso > this.capacidade) {
+            return false;
+        }
+        this.peso += peso;
+        return true;
     }
     
     public void setMusicaElevador(String musica){
         System.out.println("Estamos tocando no momento" + musica);
     }
-    
-    
+
 }
