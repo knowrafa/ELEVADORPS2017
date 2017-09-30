@@ -22,9 +22,7 @@ public class Painel {
     public Painel(int numeroPiso, Credencial credenciais){
         this.numeroPiso = numeroPiso;
         this.credenciais = credenciais;
-        
-    public Painel(Credencial credenciais){
-        
+          
     }
     
     public int chamaElevador(int pisoAtual, int pisoDestino){
