@@ -5,6 +5,9 @@
  */
 package problemaelevador;
 
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author aluno
@@ -16,7 +19,7 @@ public class ProblemaElevador {
         int quantidadeTrilhas = 5;
         float pesoMax = 800;
         Credencial credenciais = new Credencial(numeroDePisos);
-        
+        System.out.println("AQUI1");
         credenciais.novaCredencial(1, "abc");
         credenciais.novaCredencial(1, "bca");
         credenciais.novaCredencial(1, "cab");
@@ -32,14 +35,18 @@ public class ProblemaElevador {
         credenciais.novaCredencial(5, "ffe");
         credenciais.novaCredencial(6, "fee");
         //Instanciando o novo Edifício.
+        System.out.println("AQUI3");
         Edificio edificio = new Edificio("INF Prédio 2", "Câmpus Samambaia", numeroDePisos, quantidadeTrilhas, credenciais, pesoMax );
-        
+        System.out.println("AQUI2");
         edificio.setMusicInElevator(1, "Horse with no name");
         edificio.setMusicInElevator(2, "Alegro");
         edificio.setMusicInElevator(3, "Inquietação");
         edificio.setMusicInElevator(4, "Young Folks");
         edificio.setMusicInElevator(5, "El Fuego");
         
+        Scanner read = new Scanner(System.in);
+        
+        JOptionPane.showInputDialog(read, "Qual o Piso?");
         
     }
     
