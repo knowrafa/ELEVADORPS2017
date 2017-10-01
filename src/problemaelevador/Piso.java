@@ -1,15 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package problemaelevador;
 
 import java.util.Vector;
 
 /**
  *
- * @author aluno
+ * @author Arnold Lima, Rafael Alessandro e Rafael Falcão
  */
 public class Piso {
     private boolean ledSobe;
@@ -18,12 +13,20 @@ public class Piso {
     private boolean needCredencial;
     private Painel painel;
   
-    
+    /** Construtor do Piso, onde recebe um painel e o seu número.
+     * 
+     * @param numeroPiso
+     * @param novoPainel 
+     */
     public Piso(int numeroPiso, Painel novoPainel){
         this.numeroPiso = numeroPiso;
         painel = novoPainel;
     }
     
+    /**Método utilizado para acessar o painel de um certo piso da main.
+     * 
+     * @return 
+     */
     public Trilha callPainel(int pisoAtual, int pisoDestino){
         
         return painel.chamaElevador(pisoAtual, pisoDestino);
@@ -61,17 +64,13 @@ public class Piso {
     public void setCredencial(boolean credencial) {
         this.needCredencial = credencial;
     }
-
+    
     public Painel getPainel() {
         return painel;
     }
 
     public void setPainel(Painel painel) {
         this.painel = painel;
-    }
-   
-    public void defineCredentials(){
-        
     }
     
 }
