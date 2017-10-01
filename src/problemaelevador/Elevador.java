@@ -28,7 +28,7 @@ public class Elevador {
         this.descendo=false;
         this.ocupado=false;
         this.botaoTerreo=false;
-        this.portaAberta=true;
+        this.portaAberta=false;
         //setTrilha(trilha);
     }
     
@@ -117,9 +117,7 @@ public class Elevador {
     }
     
     public void moveElevador(int andarDestino, int trilha) throws InterruptedException {
-        setOcupado(true);
-        if(isPortaAberta()) fechaPortaElevador(trilha);
-        
+        setOcupado(true);       
         new Thread() {
             @Override
             public void run() {
@@ -130,15 +128,16 @@ public class Elevador {
                 
                 try {
                     for(int i=0;i<tempo;i++){ //Altera o andar atual
+                        if(isPortaAberta()) fechaPortaElevador(trilha);                        
                         sleep(2000);
-                        
                         if(isSubindo()) andarAtual++; //Incrementa ou decrementa andar dependendo da direção
                         else andarAtual--;
                         
                         if(andarAtual==andarDestino) System.out.println("Elevador " + trilha + " chegou ao  " + andarAtual);
                         else System.out.println("Elevador " + trilha + " passando pelo andar " + andarAtual);
                     }
-                    abrePortaElevador(trilha);
+                    if(!(isPortaAberta())) abrePortaElevador(trilha);
+                    if(isPortaAberta()) fechaPortaElevador(trilha);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Elevador.class.getName()).log(Level.SEVERE, null, ex);
                 }
