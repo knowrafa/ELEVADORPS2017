@@ -95,8 +95,9 @@ public class Elevador {
                 try {
                     sleep(tempo * 2000);
                     System.out.print("Elevador " + trilha + " chegou ao andar " + andarDestino);
-                    System.out.println("Esperando...");
+                    abrePortaElevador();
                     sleep(3000);
+                    fechaPortaElevador();
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Elevador.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -104,6 +105,14 @@ public class Elevador {
             }
         }.start();
         
+    }
+    
+    public void abrePortaElevador() {
+        System.out.println("Abrindo portas...");
+    }
+    
+    public void fechaPortaElevador() {
+        System.out.println("Fechando portas...");
     }
 
 }
