@@ -44,9 +44,13 @@ public class Credencial {
         
         Iterator it = credenciaisValidas.get(piso).iterator();
         while(it.hasNext()){
-            if((String) it.next() == credencial) return true;
+            System.out.println("aqui?");
+            String a =  (String)it.next();
+            System.out.println(a+ "  :  " + credencial);
+            if(a.equals(credencial)) return true;
         }
         if(credenciaisValidas.get(piso).isEmpty()) return true;
+        
         return false;
     }
     

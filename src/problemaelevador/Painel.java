@@ -50,7 +50,7 @@ public class Painel {
                 }
             }
         }
-        nearTrilha.adicionaRota(pisoAtual);
+        if(nearTrilha != null) nearTrilha.adicionaRota(pisoAtual);
         return nearTrilha;
     }
 }

@@ -25,6 +25,8 @@ public class Piso {
     }
     
     public Trilha callPainel(int pisoAtual, int pisoDestino){
+        System.out.println("Aqui o");
+        
         return painel.chamaElevador(pisoAtual, pisoDestino);
         
     }
