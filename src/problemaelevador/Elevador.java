@@ -14,11 +14,17 @@ public class Elevador {
     private int andarAtual;
     private boolean ocupado;
     private boolean subindo;
+    private boolean descendo;
     private Trilha trilha;
     private float peso;
     
     public Elevador(float capacidade){
         this.capacidade=capacidade;
+        this.andarAtual=0;
+        this.subindo=false;
+        this.descendo=false;
+        this.ocupado=false;
+        this.botaoTerreo=false;
         //setTrilha(trilha);
     }
     
@@ -62,6 +68,14 @@ public class Elevador {
         this.subindo = subindo;
     }
 
+    public boolean isDescendo() {
+        return descendo;
+    }
+
+    public void setDescendo(boolean descendo) {
+        this.descendo = descendo;
+    }
+    
     public Trilha getTrilha() {
         return trilha;
     }
@@ -92,8 +106,15 @@ public class Elevador {
             @Override
             public void run() {
                 int tempo = (int)Math.abs(andarDestino - andarAtual);
+                
+                if ((andarDestino - andarAtual) > 0) setSubindo(true); //Seta as variáveis de direção
+                else setDescendo(true);
+                
                 try {
-                    sleep(tempo * 2000);
+                    for(int i=0;i<tempo;i++){ //Altera o andar atual
+                        sleep(2000);
+                        andarAtual++;
+                    }
                     System.out.print("Elevador " + trilha + " chegou ao andar " + andarDestino);
                     abrePortaElevador();
                     sleep(3000);
@@ -102,6 +123,9 @@ public class Elevador {
                     Logger.getLogger(Elevador.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 ocupado = false;
+                
+                if(isSubindo()) setSubindo(false); //Reseta as variáveis de direção
+                else setDescendo(false);
             }
         }.start();
         
