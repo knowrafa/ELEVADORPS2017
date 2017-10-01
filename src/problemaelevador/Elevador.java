@@ -158,7 +158,7 @@ public class Elevador {
     
     public void fechaPortaElevador(int idTrilha) {
         setPortaAberta(false);
-        System.out.println("Elevador " +idTrilha+ ":\nAbrindo portas...");
+        System.out.println("Elevador " +idTrilha+ ":\nFechando portas...");
     }
 
 }
