@@ -1,13 +1,11 @@
 
 nbproject/build-impl.xml
 
-nbproject/genfiles.properties
-
-nbproject/private/private.properties
-
 nbproject/private/private.xml
 README.md
 README.md
 *.md
 /build/
 /dist/
+
+*.properties
