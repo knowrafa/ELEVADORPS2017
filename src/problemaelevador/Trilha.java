@@ -12,6 +12,8 @@ import java.util.NoSuchElementException;
 import java.util.Queue;
 import java.util.SortedSet;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Trilha {
     private Elevador elevador;
@@ -19,6 +21,14 @@ public class Trilha {
 
     public int getNumeroTrilha() {
         return numeroTrilha;
+    }
+
+    public Elevador getElevador() {
+        return elevador;
+    }
+
+    public void setElevador(Elevador elevador) {
+        this.elevador = elevador;
     }
 
     public void setNumeroTrilha(int numeroTrilha) {
@@ -58,18 +68,26 @@ public class Trilha {
    }
    
    public void proximoAndar() throws InterruptedException {
-       while(!myQueue.isEmpty())
-       {
-           sleep(50);
-           if(!(elevador.isOcupado()))
-           {
-                try {
-                  elevador.moveElevador((int)myQueue.remove(), this.numeroTrilha);
-                } catch(NoSuchElementException e) {
-                    e.printStackTrace();
-                }
-           }
-        }
+       if(!elevador.isOcupado()) //Se o elevador estiver ocupado já existe uma thread rodando
+       {        
+           new Thread() {   
+               @Override
+               public void run() {
+                   while(!myQueue.isEmpty())
+                   {
+                       try {
+                            sleep(50);
+                            if(!(elevador.isOcupado()))
+                            {
+                                    elevador.moveElevador((int)myQueue.remove(), numeroTrilha);
+                            }                           
+                       } catch (InterruptedException ex) {
+                           Logger.getLogger(Trilha.class.getName()).log(Level.SEVERE, null, ex);
+                       }                    
+                   }
+               }
+           }.start();
+       }
    }
    
    public int ultimoAndarDaFila() {

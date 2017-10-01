@@ -127,7 +127,7 @@ public class Elevador {
                     for(int i=0;i<tempo;i++){ //Altera o andar atual
                         sleep(2000);
                         andarAtual++;
-                        if(andarAtual==andarDestino) System.out.println("Elevador " + trilha + " chegou ao andar " + andarAtual);
+                        if(andarAtual==andarDestino) System.out.println("Elevador " + trilha + " chegou ao  " + andarAtual);
                         else System.out.println("Elevador " + trilha + " passando pelo andar " + andarAtual);
                     }
                     abrePortaElevador();
