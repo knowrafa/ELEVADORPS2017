@@ -19,7 +19,7 @@ public class Painel {
     public Painel(int numeroPiso, Credencial credenciais, ArrayList<Trilha> trilhas){
         this.numeroPiso = numeroPiso;
         this.credenciais = credenciais;
-          
+        this.trilhas = trilhas;  
     }
     
     public Trilha chamaElevador(int pisoAtual, int pisoDestino){
@@ -39,7 +39,8 @@ public class Painel {
         Trilha lastTrilha;
         Trilha nearTrilha = null;
         Iterator itr = trilhas.iterator();
-        while(itr.hasNext()) {
+        
+        while(itr.hasNext()){
             lastTrilha = (Trilha)itr.next();
             int lastValue = lastTrilha.ultimoAndarDaFila();
             if(near == -1) { 
@@ -53,6 +54,7 @@ public class Painel {
                 }
             }
         }
+        System.out.println(nearTrilha.getNumeroTrilha());
         if(nearTrilha != null) nearTrilha.adicionaRota(pisoAtual);
         return nearTrilha;
     }

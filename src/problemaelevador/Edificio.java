@@ -39,6 +39,7 @@ public class Edificio {
         //int eleadorzin = 
         if(null!= pisos.get(pisoAtual).callPainel(pisoAtual, pisoDestino)) 
             return pisos.get(pisoAtual).callPainel(pisoAtual, pisoDestino).getNumeroTrilha();
+        
         return -1;
     }
     
