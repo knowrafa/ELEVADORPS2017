@@ -68,10 +68,11 @@ public class Painel {
         int nextDiference;
         while(itr.hasNext())
         {
-            nearDiference = (int)abs(nearTrilha.getElevador().getAndarAtual() - pisoAtual);
+            nearDiference = (nearTrilha.getElevador().getAndarAtual() - pisoAtual);
             nextTrilha=(Trilha)itr.next();
-            nextDiference = (int)abs(nextTrilha.getElevador().getAndarAtual() - pisoAtual);
-            if(nearDiference > nextDiference) nearTrilha = nextTrilha;
+            nextDiference = (nextTrilha.getElevador().getAndarAtual() - pisoAtual);
+            
+            if((int)abs(nearDiference) > (int)abs(nextDiference) || (nearTrilha.getElevador().isOcupado() && !(nextTrilha.getElevador().isOcupado()))) nearTrilha = nextTrilha;
         }
         return nearTrilha;
     }
