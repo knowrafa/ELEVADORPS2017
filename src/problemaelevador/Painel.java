@@ -30,8 +30,11 @@ public class Painel {
                 return null;
         }
         
-        return findNearElevator(pisoAtual);
+        Trilha nearTrilha = findNearElevator(pisoAtual);
+        System.out.println("O Elevador será: " + nearTrilha.getNumeroTrilha());
+        if(nearTrilha != null) nearTrilha.adicionaRota(pisoAtual, pisoDestino);
         
+        return nearTrilha;
     }
         
     public Trilha findNearElevator(int pisoAtual){
@@ -54,8 +57,6 @@ public class Painel {
                 }
             }
         }
-        System.out.println(nearTrilha.getNumeroTrilha());
-        if(nearTrilha != null) nearTrilha.adicionaRota(pisoAtual);
         return nearTrilha;
     }
 }

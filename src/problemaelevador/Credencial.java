@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Vector;
+import javax.swing.JOptionPane;
 
 public class Credencial {
     private ArrayList<ArrayList<String>> credenciaisValidas;
@@ -30,9 +31,8 @@ public class Credencial {
         return true;        
     }
     
-    public String readCredential(){
-        Scanner read = new Scanner(System.in);
-        String credential = read.nextLine();
+    public String readCredential(){      
+        String credential = (JOptionPane.showInputDialog("Insira a credencial:"));
         return credential;
     }
     
@@ -44,9 +44,7 @@ public class Credencial {
         
         Iterator it = credenciaisValidas.get(piso).iterator();
         while(it.hasNext()){
-            System.out.println("aqui?");
             String a =  (String)it.next();
-            System.out.println(a+ "  :  " + credencial);
             if(a.equals(credencial)) return true;
         }
         if(credenciaisValidas.get(piso).isEmpty()) return true;

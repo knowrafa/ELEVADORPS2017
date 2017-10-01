@@ -5,6 +5,7 @@
 
 package problemaelevador;
 
+import static java.lang.Thread.sleep;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -17,6 +18,7 @@ public class Elevador {
     private boolean descendo;
     private Trilha trilha;
     private float peso;
+    private boolean portaAberta;
     
     public Elevador(float capacidade){
         this.capacidade=capacidade;
@@ -25,6 +27,7 @@ public class Elevador {
         this.descendo=false;
         this.ocupado=false;
         this.botaoTerreo=false;
+        this.portaAberta=true;
         //setTrilha(trilha);
     }
     
@@ -75,6 +78,14 @@ public class Elevador {
     public void setDescendo(boolean descendo) {
         this.descendo = descendo;
     }
+
+    public boolean isPortaAberta() {
+        return portaAberta;
+    }
+
+    public void setPortaAberta(boolean portaAberta) {
+        this.portaAberta = portaAberta;
+    }
     
     public Trilha getTrilha() {
         return trilha;
@@ -101,7 +112,9 @@ public class Elevador {
     }
     
     public void moveElevador(int andarDestino, int trilha) throws InterruptedException {
-        this.ocupado = true;
+        setOcupado(true);
+        if(isPortaAberta()) fechaPortaElevador();
+        
         new Thread() {
             @Override
             public void run() {
@@ -114,28 +127,31 @@ public class Elevador {
                     for(int i=0;i<tempo;i++){ //Altera o andar atual
                         sleep(2000);
                         andarAtual++;
+                        if(andarAtual==andarDestino) System.out.println("Elevador " + trilha + " chegou ao andar " + andarAtual);
+                        else System.out.println("Elevador " + trilha + " passando pelo andar " + andarAtual);
                     }
-                    System.out.print("Elevador " + trilha + " chegou ao andar " + andarDestino);
                     abrePortaElevador();
-                    sleep(3000);
                     fechaPortaElevador();
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Elevador.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                ocupado = false;
                 
                 if(isSubindo()) setSubindo(false); //Reseta as variáveis de direção
                 else setDescendo(false);
+                setOcupado(false);
             }
         }.start();
         
     }
     
-    public void abrePortaElevador() {
+    public void abrePortaElevador() throws InterruptedException {
+        setPortaAberta(true);
         System.out.println("Abrindo portas...");
+        sleep(3000);
     }
     
     public void fechaPortaElevador() {
+        setPortaAberta(false);
         System.out.println("Fechando portas...");
     }
 

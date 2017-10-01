@@ -8,6 +8,8 @@ package problemaelevador;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Edificio {
     private String nome;
@@ -37,9 +39,13 @@ public class Edificio {
   //  public 
     public int acessElevatorAt(int pisoAtual, int pisoDestino){
         Trilha trilha = pisos.get(pisoAtual).callPainel(pisoAtual, pisoDestino);
+        try {
+            trilha.proximoAndar();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Edificio.class.getName()).log(Level.SEVERE, null, ex);
+        }
         if(null!= trilha) 
             return trilha.getNumeroTrilha();
-        
         return -1;
     }
     

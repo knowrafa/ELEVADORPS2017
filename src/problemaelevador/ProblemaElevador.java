@@ -15,7 +15,6 @@ public class ProblemaElevador {
         int quantidadeTrilhas = 5;
         float pesoMax = 800;
         Credencial credenciais = new Credencial(numeroDePisos);
-        System.out.println("AQUI1");
         
         credenciais.novaCredencial(1, "abc");
         credenciais.novaCredencial(1, "bca");
@@ -35,18 +34,17 @@ public class ProblemaElevador {
         
         Edificio edificio = new Edificio("INF Prédio 2", "Câmpus Samambaia", numeroDePisos, quantidadeTrilhas, credenciais, pesoMax );
         
-        edificio.setMusicInElevator(1, "Horse with no name");
-        edificio.setMusicInElevator(2, "Alegro");
+        //edificio.setMusicInElevator(1, "Horse with no name");
+        //edificio.setMusicInElevator(2, "Alegro");
         edificio.setMusicInElevator(3, "Inquietação");
-        edificio.setMusicInElevator(4, "Young Folks");
-        edificio.setMusicInElevator(5, "El Fuego");
+        //edificio.setMusicInElevator(4, "Young Folks");
+        //edificio.setMusicInElevator(5, "El Fuego");
         
-        //Scanner read = new Scanner(System.in);
         
         int numPisoAtual = Integer.parseInt(JOptionPane.showInputDialog("Qual o Piso Atual?"));
         int numPisoDesejado = Integer.parseInt(JOptionPane.showInputDialog("Qual o Piso Desejado?"));
         
-        System.out.println("O Elevador será: " + edificio.acessElevatorAt(numPisoAtual, numPisoDesejado));
+        edificio.acessElevatorAt(numPisoAtual, numPisoDesejado);
         return ;
         
     }

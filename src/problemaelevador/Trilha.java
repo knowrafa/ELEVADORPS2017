@@ -5,6 +5,7 @@
 
 package problemaelevador;
 
+import static java.lang.Thread.sleep;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
@@ -47,20 +48,28 @@ public class Trilha {
        elevador.setMusicaElevador(music);
    }
    
-   public void adicionaRota(int numeroPiso) {
+   public void adicionaRota(int pisoPedido, int pisoDestino) {
        try {
-           myQueue.add(numeroPiso);
+           myQueue.add(pisoPedido);
+           myQueue.add(pisoDestino);
        } catch (IllegalStateException e) {
            e.printStackTrace();
        }
    }
    
-   public void proximoAndar() throws InterruptedException {      
-       try {
-         elevador.moveElevador((int)myQueue.remove(), this.numeroTrilha);
-       } catch(NoSuchElementException e) {
-           e.printStackTrace();
-       }
+   public void proximoAndar() throws InterruptedException {
+       while(!myQueue.isEmpty())
+       {
+           sleep(50);
+           if(!(elevador.isOcupado()))
+           {
+                try {
+                  elevador.moveElevador((int)myQueue.remove(), this.numeroTrilha);
+                } catch(NoSuchElementException e) {
+                    e.printStackTrace();
+                }
+           }
+        }
    }
    
    public int ultimoAndarDaFila() {
