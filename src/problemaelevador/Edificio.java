@@ -36,9 +36,9 @@ public class Edificio {
     
   //  public 
     public int acessElevatorAt(int pisoAtual, int pisoDestino){
-        //int eleadorzin = 
-        if(null!= pisos.get(pisoAtual).callPainel(pisoAtual, pisoDestino)) 
-            return pisos.get(pisoAtual).callPainel(pisoAtual, pisoDestino).getNumeroTrilha();
+        Trilha trilha = pisos.get(pisoAtual).callPainel(pisoAtual, pisoDestino);
+        if(null!= trilha) 
+            return trilha.getNumeroTrilha();
         
         return -1;
     }

@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 public class ProblemaElevador {
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         int numeroDePisos = 10;
         int quantidadeTrilhas = 5;
         float pesoMax = 800;
@@ -41,12 +41,13 @@ public class ProblemaElevador {
         edificio.setMusicInElevator(4, "Young Folks");
         edificio.setMusicInElevator(5, "El Fuego");
         
-        Scanner read = new Scanner(System.in);
+        //Scanner read = new Scanner(System.in);
         
         int numPisoAtual = Integer.parseInt(JOptionPane.showInputDialog("Qual o Piso Atual?"));
         int numPisoDesejado = Integer.parseInt(JOptionPane.showInputDialog("Qual o Piso Desejado?"));
         
         System.out.println("O Elevador será: " + edificio.acessElevatorAt(numPisoAtual, numPisoDesejado));
+        return ;
         
     }
     
