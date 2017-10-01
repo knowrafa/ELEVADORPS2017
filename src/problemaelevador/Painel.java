@@ -42,7 +42,10 @@ public class Painel {
         while(itr.hasNext()) {
             lastTrilha = (Trilha)itr.next();
             int lastValue = lastTrilha.ultimoAndarDaFila();
-            if(near == -1) { near = lastValue; }
+            if(near == -1) { 
+                near = lastValue;
+                nearTrilha = lastTrilha;
+            }
             else {
                 if((int)abs(near-pisoAtual) > (int)abs(lastValue-pisoAtual)) { 
                     near = lastValue;
