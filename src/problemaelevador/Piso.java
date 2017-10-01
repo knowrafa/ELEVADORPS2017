@@ -23,6 +23,12 @@ public class Piso {
         this.numeroPiso = numeroPiso;
         painel = novoPainel;
     }
+    
+    public Trilha callPainel(int pisoAtual, int pisoDestino){
+        return painel.chamaElevador(pisoAtual, pisoDestino);
+        
+    }
+    
     public boolean isLedSobe() {
         return ledSobe;
     }

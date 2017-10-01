@@ -15,6 +15,22 @@ import java.util.Vector;
 public class Trilha {
     private Elevador elevador;
     private int numeroTrilha;
+
+    public int getNumeroTrilha() {
+        return numeroTrilha;
+    }
+
+    public void setNumeroTrilha(int numeroTrilha) {
+        this.numeroTrilha = numeroTrilha;
+    }
+
+    public int getQuantidadeDePisos() {
+        return quantidadeDePisos;
+    }
+
+    public void setQuantidadeDePisos(int quantidadeDePisos) {
+        this.quantidadeDePisos = quantidadeDePisos;
+    }
     private int quantidadeDePisos;
     private Queue myQueue = new LinkedList();
    

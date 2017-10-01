@@ -39,7 +39,10 @@ public class Edificio {
     }
     
   //  public 
-    
+    public int acessElevatorAt(int pisoAtual, int pisoDestino){
+        
+        return pisos.get(pisoAtual).callPainel(pisoAtual, pisoDestino).getNumeroTrilha();
+    }
     
     public String getNome() {
         return nome;
