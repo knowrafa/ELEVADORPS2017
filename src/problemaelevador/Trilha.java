@@ -59,6 +59,7 @@ public class Trilha {
         try {
             myQueue.add(pisoPedido);
             myQueue.add(pisoDestino);
+            //System.out.println("Rotas adicionadas");
         } catch (IllegalStateException e) {
             e.printStackTrace();
         }
@@ -68,29 +69,26 @@ public class Trilha {
      * 
      * @throws InterruptedException 
      */
-    public void proximoAndar() throws InterruptedException {
-        if(!elevador.isOcupado()) //Se o elevador estiver ocupado já existe uma thread rodando
-        {        
-            new Thread() {   
-                @Override
-                public void run() {
-                    while(!myQueue.isEmpty())
-                    {
-                        try {
-                             sleep(50);
-                             if(!(elevador.isOcupado()))
-                             {       
-                                     int nextPiso = (int)myQueue.remove();
-                                     System.out.println("Debug: " + nextPiso);
-                                     elevador.moveElevador(nextPiso, numeroTrilha);
-                             }                           
-                        } catch (InterruptedException ex) {
-                            Logger.getLogger(Trilha.class.getName()).log(Level.SEVERE, null, ex);
-                        }                    
-                    }
+    public void proximoAndar() throws InterruptedException {     
+        new Thread() {   
+            @Override
+            public void run() {
+                if((elevador.isOcupado())) return;
+                while(!myQueue.isEmpty())
+                {
+                    try {
+                         sleep(50);
+                         if(!(elevador.isOcupado()))
+                         {       
+                                 int nextPiso = (int)myQueue.remove();
+                                 elevador.moveElevador(nextPiso, numeroTrilha);
+                         }                           
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(Trilha.class.getName()).log(Level.SEVERE, null, ex);
+                    }                    
                 }
-            }.start();
-        }
+            }
+        }.start();
     }
     
     /**Retorna o último andar da fila.
