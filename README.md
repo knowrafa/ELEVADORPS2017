@@ -5,4 +5,4 @@ Para ajudar no entendimento do projeto, recomenda-se uma breve leitura dos diagr
 
 Como executar:
 
-O master do repositório pode ser aberto como um projeto utilizando-se alguma IDE que execute java (Eclipse, NetBeans 8.1 ou superior)
+O master do repositório pode ser aberto como um projeto utilizando-se alguma IDE que execute java (Eclipse, NetBeans 8.1 ou superior) ou por linhas de comando, se houver como.
