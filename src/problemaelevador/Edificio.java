@@ -23,15 +23,11 @@ public class Edificio {
         this.credenciais = credenciais;
         
         for(i=0; i < quantidadeTrilhas; i++){
-            System.out.println("AQUIMEMO");
             trilhas.add(new Trilha(i+1, quantidadePisos,  new Elevador(pesoMax)));
-            System.out.println("TRILHAS "+ i);
         }
-        System.out.println("TRILHASPROBLEM");
         for(i=0; i <= quantidadePisos; i++){
             pisos.add(new Piso(i, new Painel(i, credenciais, trilhas)));
         }
-        System.out.println("PISOSPROBLEM");
     }
     
     public void setMusicInElevator(int numTrilha, String music){
