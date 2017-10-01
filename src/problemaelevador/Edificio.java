@@ -18,6 +18,18 @@ public class Edificio {
     private Credencial credenciais;
     private ArrayList<Trilha> trilhas = new ArrayList<Trilha>();
     
+    
+    /** Construtor de Edifício
+     * 
+     * @param nome
+     * @param endereco
+     * @param quantidadePisos
+     * @param quantidadeTrilhas
+     * @param credenciais
+     * @param pesoMax 
+     * 
+     * Instancia todos os pisos, trilhas e elevadores.
+     */
     public Edificio(String nome, String endereco, int quantidadePisos, int quantidadeTrilhas ,Credencial credenciais, float pesoMax){
         int i=0;
         setNome(nome);
@@ -31,13 +43,25 @@ public class Edificio {
             pisos.add(new Piso(i, new Painel(i, credenciais, trilhas)));
         }
     }
-    
+    /** Define a música do elevador
+     * 
+     * @param numTrilha
+     * @param music 
+     */
     public void setMusicInElevator(int numTrilha, String music){
         trilhas.get(numTrilha-1).setElevatorMusic(music);
     }
     
-  //  public 
+     /** Acessa o elevador
+      * 
+      * @param pisoAtual
+      * @param pisoDestino
+      * @return 
+      * 
+      * Método criado para o acesso na main.
+      */
     public int acessElevatorAt(int pisoAtual, int pisoDestino){
+        System.out.println("ENTROU AQUI");
         Trilha trilha = pisos.get(pisoAtual).callPainel(pisoAtual, pisoDestino);
         if(trilha == null) return -1;
         try {
@@ -45,7 +69,7 @@ public class Edificio {
         } catch (InterruptedException ex) {
             Logger.getLogger(Edificio.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+          
         return trilha.getNumeroTrilha();
         
     }

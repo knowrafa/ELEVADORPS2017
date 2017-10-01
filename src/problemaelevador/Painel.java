@@ -9,6 +9,7 @@ import static java.lang.Math.abs;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Vector;
+import javax.swing.JOptionPane;
 
 public class Painel {
     private ArrayList botoes;
@@ -23,6 +24,7 @@ public class Painel {
     }
     
     public Trilha chamaElevador(int pisoAtual, int pisoDestino){
+        //não entrou nem aqui
         String credencial;
         if(credenciais.needCredential(pisoDestino)){
             credencial = credenciais.readCredential();
@@ -61,6 +63,7 @@ public class Painel {
         return nearTrilha;
     }
     */
+        
         Iterator itr = trilhas.iterator();
         Trilha nearTrilha=(Trilha)itr.next();
         Trilha nextTrilha;
@@ -76,4 +79,5 @@ public class Painel {
         }
         return nearTrilha;
     }
+
 }

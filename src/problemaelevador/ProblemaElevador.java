@@ -39,7 +39,7 @@ public class ProblemaElevador {
         edificio.setMusicInElevator(3, "InquietaÃ§Ã£o");
         //edificio.setMusicInElevator(4, "Young Folks");
         //edificio.setMusicInElevator(5, "El Fuego");
-        
+            
         for(int i=0; i < 2; i++){
             String temporary = JOptionPane.showInputDialog("Qual o Piso Atual?");
             if(temporary.equals("")){

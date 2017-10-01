@@ -56,7 +56,7 @@ public class Credencial {
      * @return 
      */
     public boolean isValid(int piso, String credencial){
-        
+        //Não entrou aqui
         if(piso > this.numeroDePisos || piso < 0)
             System.out.println("Piso Inválido");
         

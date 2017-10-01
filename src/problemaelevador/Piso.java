@@ -28,7 +28,7 @@ public class Piso {
      * @return 
      */
     public Trilha callPainel(int pisoAtual, int pisoDestino){
-        
+        //NÃO ENTROU AQUI;
         return painel.chamaElevador(pisoAtual, pisoDestino);
         
     }
