@@ -118,7 +118,7 @@ public class Elevador {
     
     public void moveElevador(int andarDestino, int trilha) throws InterruptedException {
         setOcupado(true);
-        if(isPortaAberta()) fechaPortaElevador();
+        if(isPortaAberta()) fechaPortaElevador(trilha);
         
         new Thread() {
             @Override
@@ -138,7 +138,7 @@ public class Elevador {
                         if(andarAtual==andarDestino) System.out.println("Elevador " + trilha + " chegou ao  " + andarAtual);
                         else System.out.println("Elevador " + trilha + " passando pelo andar " + andarAtual);
                     }
-                    abrePortaElevador();
+                    abrePortaElevador(trilha);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Elevador.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -148,18 +148,17 @@ public class Elevador {
                 setOcupado(false);
             }
         }.start();
-        
     }
     
-    public void abrePortaElevador() throws InterruptedException {
+    public void abrePortaElevador(int idTrilha) throws InterruptedException {
         setPortaAberta(true);
-        System.out.println("Abrindo portas...");
+        System.out.println("Elevador " +idTrilha+ ":\nAbrindo portas...");
         sleep(3000);
     }
     
-    public void fechaPortaElevador() {
+    public void fechaPortaElevador(int idTrilha) {
         setPortaAberta(false);
-        System.out.println("Fechando portas...");
+        System.out.println("Elevador " +idTrilha+ ":\nAbrindo portas...");
     }
 
 }
