@@ -1,6 +1,6 @@
 /**
  *
- * @author Arnold Lima, Rafael Alessandro, Rafael Falcão
+ * @author Arnold Lima, Rafael Alessandro, Rafael FalcÃ£o
  */
 
 package problemaelevador;
@@ -120,23 +120,25 @@ public class Elevador {
             public void run() {
                 int tempo = (int)Math.abs(andarDestino - andarAtual);
                 
-                if ((andarDestino - andarAtual) > 0) setSubindo(true); //Seta as variáveis de direção
+                if ((andarDestino - andarAtual) > 0) setSubindo(true); //Seta as variÃ¡veis de direÃ§Ã£o
                 else setDescendo(true);
                 
                 try {
                     for(int i=0;i<tempo;i++){ //Altera o andar atual
                         sleep(2000);
-                        andarAtual++;
+                        
+                        if(isSubindo()) andarAtual++; //Incrementa ou decrementa andar dependendo da direção
+                        else andarAtual--;
+                        
                         if(andarAtual==andarDestino) System.out.println("Elevador " + trilha + " chegou ao  " + andarAtual);
                         else System.out.println("Elevador " + trilha + " passando pelo andar " + andarAtual);
                     }
                     abrePortaElevador();
-                    fechaPortaElevador();
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Elevador.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 
-                if(isSubindo()) setSubindo(false); //Reseta as variáveis de direção
+                if(isSubindo()) setSubindo(false); //Reseta as variÃ¡veis de direÃ§Ã£o
                 else setDescendo(false);
                 setOcupado(false);
             }

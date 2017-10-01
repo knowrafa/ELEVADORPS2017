@@ -1,6 +1,6 @@
 /**
  *
- * @author Arnold Lima, Rafael Alessandro, Rafael Falcão
+ * @author Arnold Lima, Rafael Alessandro, Rafael FalcÃ£o
  */
 
 package problemaelevador;
@@ -30,13 +30,13 @@ public class ProblemaElevador {
         credenciais.novaCredencial(5, "fff");
         credenciais.novaCredencial(5, "ffe");
         credenciais.novaCredencial(6, "fee");
-        //Instanciando o novo Edifício.
+        //Instanciando o novo EdifÃ­cio.
         
-        Edificio edificio = new Edificio("INF Prédio 2", "Câmpus Samambaia", numeroDePisos, quantidadeTrilhas, credenciais, pesoMax );
+        Edificio edificio = new Edificio("INF PrÃ©dio 2", "CÃ¢mpus Samambaia", numeroDePisos, quantidadeTrilhas, credenciais, pesoMax );
         
         //edificio.setMusicInElevator(1, "Horse with no name");
         //edificio.setMusicInElevator(2, "Alegro");
-        edificio.setMusicInElevator(3, "Inquietação");
+        edificio.setMusicInElevator(3, "InquietaÃ§Ã£o");
         //edificio.setMusicInElevator(4, "Young Folks");
         //edificio.setMusicInElevator(5, "El Fuego");
         
@@ -45,6 +45,11 @@ public class ProblemaElevador {
         int numPisoDesejado = Integer.parseInt(JOptionPane.showInputDialog("Qual o Piso Desejado?"));
         
         edificio.acessElevatorAt(numPisoAtual, numPisoDesejado);
+        
+        numPisoAtual = Integer.parseInt(JOptionPane.showInputDialog("Qual o Piso Atual?"));
+        numPisoDesejado = Integer.parseInt(JOptionPane.showInputDialog("Qual o Piso Desejado?"));
+        
+        edificio.acessElevatorAt(numPisoAtual, numPisoDesejado);        
         return ;
         
     }
