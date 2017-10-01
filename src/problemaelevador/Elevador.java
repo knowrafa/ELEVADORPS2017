@@ -19,6 +19,7 @@ public class Elevador {
     private Trilha trilha;
     private float peso;
     private boolean portaAberta;
+    private String musica;
     
     public Elevador(float capacidade){
         this.capacidade=capacidade;
@@ -108,7 +109,11 @@ public class Elevador {
     }
     
     public void setMusicaElevador(String musica){
-        System.out.println("Estamos tocando no momento " + musica);
+        this.musica = musica;
+    }
+    
+    public void getMusicaElevador(){
+        System.out.println("Estamos tocando no momento " + this.musica);
     }
     
     public void moveElevador(int andarDestino, int trilha) throws InterruptedException {
@@ -138,7 +143,7 @@ public class Elevador {
                     Logger.getLogger(Elevador.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 
-                if(isSubindo()) setSubindo(false); //Reseta as variÃ¡veis de direÃ§Ã£o
+                if(isSubindo()) setSubindo(false); //reset direction variables
                 else setDescendo(false);
                 setOcupado(false);
             }
