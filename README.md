@@ -1,7 +1,7 @@
 # Atividade Projeto de Software
 
 Este projeto representa a abstração de um sistema automatizado de elevadores. 
-Para ajudar no entendimento do projeto, recomenda-se uma breve leitura dos diagramas disponíveis no repositório.
+Para ajudar no entendimento do projeto, recomenda-se uma breve leitura dos [diagramas](https://github.com/knowrafa/ELEVADORPS2017/tree/master/Diagramas) disponíveis no repositório.
 
 Como executar:
 
