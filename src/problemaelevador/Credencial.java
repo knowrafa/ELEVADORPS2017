@@ -49,6 +49,8 @@ public class Credencial {
         }
         if(credenciaisValidas.get(piso).isEmpty()) return true;
         
+        JOptionPane.showMessageDialog(null, "Credencial Inválida!!");;
+        
         return false;
     }
     

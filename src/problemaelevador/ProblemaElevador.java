@@ -40,16 +40,24 @@ public class ProblemaElevador {
         //edificio.setMusicInElevator(4, "Young Folks");
         //edificio.setMusicInElevator(5, "El Fuego");
         
+        for(int i=0; i < 2; i++){
+            String temporary = JOptionPane.showInputDialog("Qual o Piso Atual?");
+            if(temporary.equals("")){
+                JOptionPane.showMessageDialog(null, "Inválido!\nPrograma sendo encerrado...");
+                return ;
+            }
+            int numPisoAtual = Integer.parseInt(temporary);
+            
+            temporary = JOptionPane.showInputDialog("Qual o Piso Atual?");
+            if(temporary.equals("")){
+                JOptionPane.showMessageDialog(null, "Inválido!\nPrograma sendo encerrado...");
+                return ;
+            }
+            int numPisoDesejado = Integer.parseInt(temporary);
+            
+            edificio.acessElevatorAt(numPisoAtual, numPisoDesejado);
+        }
         
-        int numPisoAtual = Integer.parseInt(JOptionPane.showInputDialog("Qual o Piso Atual?"));
-        int numPisoDesejado = Integer.parseInt(JOptionPane.showInputDialog("Qual o Piso Desejado?"));
-        
-        edificio.acessElevatorAt(numPisoAtual, numPisoDesejado);
-        
-        numPisoAtual = Integer.parseInt(JOptionPane.showInputDialog("Qual o Piso Atual?"));
-        numPisoDesejado = Integer.parseInt(JOptionPane.showInputDialog("Qual o Piso Desejado?"));
-        
-        edificio.acessElevatorAt(numPisoAtual, numPisoDesejado);        
         return ;
         
     }

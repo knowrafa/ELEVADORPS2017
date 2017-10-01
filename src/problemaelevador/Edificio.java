@@ -39,16 +39,15 @@ public class Edificio {
   //  public 
     public int acessElevatorAt(int pisoAtual, int pisoDestino){
         Trilha trilha = pisos.get(pisoAtual).callPainel(pisoAtual, pisoDestino);
-   
+        if(trilha == null) return -1;
         try {
             trilha.proximoAndar();
         } catch (InterruptedException ex) {
             Logger.getLogger(Edificio.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        if(null!= trilha) 
-            return trilha.getNumeroTrilha();
-        return -1;
+        return trilha.getNumeroTrilha();
+        
     }
     
     public String getNome() {
