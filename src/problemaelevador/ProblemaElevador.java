@@ -40,7 +40,7 @@ public class ProblemaElevador {
         //edificio.setMusicInElevator(4, "Young Folks");
         //edificio.setMusicInElevator(5, "El Fuego");
         
-        //PARA TESTAR O COMMIT
+        //Ammend test
         
         for(int i=0; i < 2; i++){
             String temporary = JOptionPane.showInputDialog("Qual o Piso Atual?");
