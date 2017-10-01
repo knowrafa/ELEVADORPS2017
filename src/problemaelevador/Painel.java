@@ -38,6 +38,7 @@ public class Painel {
     }
         
     public Trilha findNearElevator(int pisoAtual){
+        /*
         int near = -1;
         Trilha lastTrilha;
         Trilha nearTrilha = null;
@@ -56,6 +57,21 @@ public class Painel {
                     nearTrilha = lastTrilha;
                 }
             }
+        }
+        return nearTrilha;
+    }
+    */
+        Iterator itr = trilhas.iterator();
+        Trilha nearTrilha=(Trilha)itr.next();
+        Trilha nextTrilha;
+        int nearDiference;
+        int nextDiference;
+        while(itr.hasNext())
+        {
+            nearDiference = (int)abs(nearTrilha.getElevador().getAndarAtual() - pisoAtual);
+            nextTrilha=(Trilha)itr.next();
+            nextDiference = (int)abs(nextTrilha.getElevador().getAndarAtual() - pisoAtual);
+            if(nearDiference > nextDiference) nearTrilha = nextTrilha;
         }
         return nearTrilha;
     }
